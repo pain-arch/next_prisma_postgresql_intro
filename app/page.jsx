@@ -21,7 +21,7 @@ export default async function Home() {
 
   return (
     <main className={styles.main}>
-       <h1 style={{marginBottom : '15px'}}>Feed</h1>
+       <h1 style={{marginBottom : '15px'}}>Feeds</h1>
        {
         posts.map((post) => {
           return(
