@@ -1,3 +1,4 @@
+import Post from "./components/post";
 import styles from "./page.module.css";
 import prisma from "@/lib/prisma";
 
@@ -20,7 +21,20 @@ export default async function Home() {
 
   return (
     <main className={styles.main}>
-       <h1>Feed</h1>
+       <h1 style={{marginBottom : '15px'}}>Feed</h1>
+       {
+        posts.map((post) => {
+          return(
+            <Post
+              key={post.id}
+              id={post.id}
+              title={post.title}
+              content={post.content}
+              authorName={post.author.name}
+            />
+          )
+        })
+       }
     </main>
   );
 }
